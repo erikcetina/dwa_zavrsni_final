@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<h2> Djelatnik </h2>
+<br>
+{% for Djelatnik in djelatnik_list %}
+<div class="Djelatnik">
+    <h4>{{ Djelatnik.Ime }}</h4>
+</div>
+{% endfor %}
+{% endblock %}

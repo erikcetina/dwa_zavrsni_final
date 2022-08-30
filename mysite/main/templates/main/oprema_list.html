@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<h2> Oprema </h2>
+<br>
+{% for Oprema in oprema_list %}
+<div class="Oprema">
+    <h4>{{ Oprema.Ime_opreme }}</h4>
+</div>
+{% endfor %}
+{% endblock %}

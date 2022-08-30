@@ -1,0 +1,23 @@
+Djelatnik:
+Ime 
+Prezime
+OIB
+mail
+tip/titula -choice field(Asistent,Profesor)
+
+Prostorija:
+Broj prostorije
+Kat
+
+Oprema:
+Prostorija FK
+Ime opreme
+Cijena opreme
+
+
+Rezervacija:
+Djelatnik FK
+Oprema FK
+Prostorija FK
+Razdoblje od
+Razdoblje do 

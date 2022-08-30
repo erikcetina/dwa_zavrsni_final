@@ -1,0 +1,17 @@
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul>
+    {% if user.is_authenticated %}
+    <li>Pozdrav {{ user.email }}!</li>
+    <li><a href={% url 'main:logout' %}>Odjava</a></li>
+    {% else %}
+    <li>Niste prijavljeni.</li>
+    <li><a href={% url 'main:login' %}>Prijava</a> | <a href={% url 'main:signup' %}>Registracija</a></li>
+    {% endif %}
+    </ul>
+</nav>
+
+
+

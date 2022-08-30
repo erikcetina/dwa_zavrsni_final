@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<h2> Prostorija </h2>
+<br>
+{% for Prostorija in prostorija_list %}
+<div class="Prostorija">
+    <h4>{{ Prostorija.Broj_prostorije }}</h4>
+</div>
+{% endfor %}
+{% endblock %}

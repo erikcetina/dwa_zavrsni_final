@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for rezervacija in rezervacija_list %}
+    {% for colname in rezervacija.column_set.all  %}
+        <p>{{colname}}</p>
+    {% endfor %}
+{% endfor %}
+
+
+<div class="container d-flex mt-5" style="width: 70%;">
+    <div class="col">
+        <h1 class="text-center">Rezervacije</h1>
+        <table class="table table-bordered table-hover mt-5">
+            <thead>
+                <tr>
+                    {% comment %} <th>#</th> {% endcomment %}
+                    <th class="text-center" scope="col">Rezervacija</th>
+                    <th class="text-center" scope="col">Opis</th>
+                    <th class="text-center" scope="col">Ažuriraj</th>
+                    <th class="text-center" scope="col">Obriši</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+            
+                {% for rezervacija in rezervacija_list %}
+                <tr>
+                    {% comment %} <th scope="row">{{forloop.counter}}</th> {% endcomment %}
+                    <td class="ml-5"><a href= {% url "main:rezervacije_detail" rezervacija.pk %} >{{rezervacija.Djelatnik}}</a></td>
+                    <td class="text-center">{{rezervacija.sazetak}}</td>
+                    <td><a href={% url "main:rezervacije_update" rezervacija.id %} >Update</a></td>
+                    <td><a href={% url "main:rezervacije_delete" rezervacija.id %} >Delete</a></td>
+                </tr>
+            {% endfor %}
+        
+            </tbody>
+        </table>    
+        <div class="d-flex justify-content-center">
+            <a href="{% url 'main:rezervacije_create' %}" class="d-block btn btn-primary btn-lg my-5">Napravi rezervaciju</a>
+        </div>
+    </div>
+        
+</div>
+
+{% endblock content %} 
